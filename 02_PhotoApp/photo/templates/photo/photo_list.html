@@ -5,20 +5,15 @@
     <body>
         <h1><a href="">사진 목록 페이지</a></h1>
         <section>
+            {% for photo in photos %}
             <div>
                 <h2>
-                    <a href="">푸른 언덕</a>
+                    <a href="">{{ photo.title }}</a>
                 </h2>
-                <img src="https://cdn.pixabay.com/photo/2018/05/17/09/18/away-3408119_1280.jpg" alt="푸른언덕" width="300" />
-                <p>마이크로소프트, 1000원</p>
+                <img src="{{ photo.image }}" alt="{{ photo.title }}" width="300" />
+                <p>{{ photo.author }}, {{ photo.price }}원</p>
             </div>
-            <div>
-                <h2>
-                    <a href="">푸른 언덕2</a>
-                </h2>
-                <img src="https://cdn.pixabay.com/photo/2018/05/17/09/18/away-3408119_1280.jpg" alt="푸른언덕" width="300">
-                <p>마이크로소프트, 1000원</p>
-            </div>
+            {% endfor %}
         </section>
     </body>
 </html>
