@@ -1,0 +1,4 @@
+django~=3.2.10
+djangorestframework==3.13.1
+pylint
+black

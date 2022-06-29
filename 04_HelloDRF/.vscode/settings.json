@@ -1,0 +1,11 @@
+{
+    "editor.formatOnSave": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--skip-string-normalization"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m",
+}

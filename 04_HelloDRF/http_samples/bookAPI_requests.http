@@ -1,0 +1,17 @@
+GET http://127.0.0.1:8000/example/fbv/books/
+
+###
+
+POST http://127.0.0.1:8000/example/fbv/books/
+Content-Type: application/json
+
+{
+    "bid": 3,
+    "title": "심플 소프트웨어",
+    "author": "맥스 카넷 알렉산더",
+    "category": "프로그래밍",
+    "pages": 228,
+    "price": 18000,
+    "published_date": "2019-10-30",
+    "description": "코드의 단순성.가독성.안정성.유지보수"
+}
