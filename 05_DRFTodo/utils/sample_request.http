@@ -1,0 +1,58 @@
+###
+
+# Get all todo
+GET http://127.0.0.1:8000/todo/
+
+
+###
+
+# Get specific todo
+GET http://127.0.0.1:8000/todo/2/
+
+###
+
+# create a new todo
+POST http://127.0.0.1:8000/todo/
+Content-Type: application/json
+
+{
+    "title": "방금 추가된 Todo",
+    "description": "새롭게 Todo를 추가했습니다."
+}
+
+###
+
+# edit a todo
+
+PUT http://127.0.0.1:8000/todo/2/
+Content-Type: application/json
+
+{
+    "title": "화분에 물주기",
+    "description": "물은 1주일에 5번은 줘야 합니다.",
+    "complete": false,
+    "important": true
+}
+
+###
+
+# Get a list of done
+
+GET http://127.0.0.1:8000/done/
+
+###
+
+# Check done todo
+
+GET http://127.0.0.1:8000/done/3/
+
+###
+
+# check done todo using post
+
+POST http://127.0.0.1:8000/done/
+Content-Type: application/json
+
+{
+    "id": 1
+}
