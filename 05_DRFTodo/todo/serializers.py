@@ -21,9 +21,8 @@ class TodoCreateSerializer(serializers.ModelSerializer):
 
 
 class TodoDoneSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=False)
+
     class Meta:
         model = Todo
         fields = ("id",)
-
-    def create(self, validated_data):
-        return Todo(**validated_data)

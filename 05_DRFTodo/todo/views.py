@@ -55,7 +55,7 @@ class DoneTodosAPIView(APIView):
             done.complete = True
             done.save()
             serializer = TodoDetailSerializer(done)
-            return Response(status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
