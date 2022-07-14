@@ -1,0 +1,119 @@
+# register new user
+
+## bad password
+
+POST http://127.0.0.1:8000/users/register/
+Content-Type: application/json
+
+{
+    "username": "testuser1",
+    "password": "password",
+    "password2": "password",
+    "email": "test1@test.com"
+}
+
+###
+
+## mismatch between password and password2
+
+POST http://127.0.0.1:8000/users/register/
+Content-Type: application/json
+
+{
+    "username": "testuser1",
+    "password": "dkssud!!",
+    "password2": "password",
+    "email": "test1@test.com"
+}
+
+###
+
+## good password
+
+POST http://127.0.0.1:8000/users/register/
+Content-Type: application/json
+
+{
+    "username": "testuser1",
+    "password": "dkssud!!",
+    "password2": "dkssud!!",
+    "email": "test1@test.com"
+}
+
+###
+
+## existing email
+
+POST http://127.0.0.1:8000/users/register/
+Content-Type: application/json
+
+{
+    "username": "testuser2",
+    "password": "dkssud!!",
+    "password2": "dkssud!!",
+    "email": "test1@test.com"
+}
+
+###
+
+## new testuser2
+
+POST http://127.0.0.1:8000/users/register/
+Content-Type: application/json
+
+{
+    "username": "testuser2",
+    "password": "dkssud!!",
+    "password2": "dkssud!!",
+    "email": "test2@test.com"
+}
+
+###
+
+## login with correct password
+
+POST http://127.0.0.1:8000/users/login/
+Content-Type: application/json
+
+{
+    "username": "testuser4",
+    "password": "dkssud!!"
+}
+
+###
+
+## login with wrong password
+
+POST http://127.0.0.1:8000/users/login/
+Content-Type: application/json
+
+{
+    "username": "testuser1",
+    "password": "password"
+}
+
+###
+
+## get profile
+
+GET http://127.0.0.1:8000/users/profile/1/
+
+###
+
+PUT http://127.0.0.1:8000/users/profile/5/
+Authorization: Token 0a876f0b558437fb42c9a79c8d6ae4914182eb3a
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="nickname"
+
+ninaeros
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="position"
+
+Backend
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="subjects"
+
+Django, Flutter, React
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
