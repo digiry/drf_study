@@ -62,10 +62,10 @@ POST http://127.0.0.1:8000/users/register/
 Content-Type: application/json
 
 {
-    "username": "testuser2",
+    "username": "testuser1",
     "password": "dkssud!!",
     "password2": "dkssud!!",
-    "email": "test2@test.com"
+    "email": "test1@test.com"
 }
 
 ###
@@ -76,7 +76,7 @@ POST http://127.0.0.1:8000/users/login/
 Content-Type: application/json
 
 {
-    "username": "testuser4",
+    "username": "testuser1",
     "password": "dkssud!!"
 }
 
@@ -96,12 +96,12 @@ Content-Type: application/json
 
 ## get profile
 
-GET http://127.0.0.1:8000/users/profile/1/
+GET http://127.0.0.1:8000/users/profile/2/
 
 ###
 
-PUT http://127.0.0.1:8000/users/profile/5/
-Authorization: Token 0a876f0b558437fb42c9a79c8d6ae4914182eb3a
+PUT http://127.0.0.1:8000/users/profile/2/
+Authorization: Token 23642b68689aa520dfc9ce5d810e044d4b94b822
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -117,3 +117,50 @@ Content-Disposition: form-data; name="subjects"
 
 Django, Flutter, React
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+POST http://127.0.0.1:8000/posts/
+Authorization: Token 0a876f0b558437fb42c9a79c8d6ae4914182eb3a
+Content-Type: multipart/form-data; boundary=------WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="title"
+
+Test POST
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="body"
+
+Hello! This is body
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="category"
+
+백엔드
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+HEAD http://127.0.0.1:8000/posts/
+
+###
+
+GET http://127.0.0.1:8000/like/1/
+Authorization: Token 1563c960972fbc4459d185fb77b6862e6615a7fa
+
+###
+
+GET http://127.0.0.1:8000/posts/1/
+Authorization: Token 1563c960972fbc4459d185fb77b6862e6615a7fa
+
+###
+
+POST http://127.0.0.1:8000/comments/
+Authorization: Token 1563c960972fbc4459d185fb77b6862e6615a7fa
+Content-Type: application/json
+
+{
+    "post": 1,
+    "text": "좋은 글 잘 봤습니다."
+}
+
+###
